@@ -49,7 +49,7 @@ export function CursorGradient() {
         height: 700,
         marginLeft: -350,
         marginTop: -350,
-        background: 'radial-gradient(circle, rgba(153,69,222,0.07) 0%, rgba(153,69,222,0.03) 35%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(217,119,87,0.09) 0%, rgba(217,119,87,0.04) 35%, transparent 70%)',
         willChange: 'left, top',
       }}
     />

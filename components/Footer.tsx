@@ -10,7 +10,7 @@ const GITHUB_STARS_URL = 'https://github.com/ayushrskiaa/claude-monitor/stargaze
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-black">
+    <footer className="border-t border-cream/5 bg-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <motion.div
           variants={fadeInUp}
@@ -29,14 +29,14 @@ export function Footer() {
                 CLAUDE<span className="text-accent">.</span>MONITOR
               </span>
             </div>
-            <p className="text-xs text-zinc-500 leading-relaxed max-w-[200px]">
+            <p className="text-xs text-stone-500 leading-relaxed max-w-[200px]">
               Real-time visibility into every Claude Code tool call.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <p className="text-xs font-mono text-zinc-600 tracking-wider mb-3">NAVIGATE</p>
+            <p className="text-xs font-mono text-stone-600 tracking-wider mb-3">NAVIGATE</p>
             <div className="flex flex-col gap-2">
               {[
                 { href: '/#features', label: 'Features' },
@@ -48,7 +48,7 @@ export function Footer() {
                   key={href}
                   href={href}
                   {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className="text-xs text-zinc-500 hover:text-white transition-colors duration-200"
+                  className="text-xs text-stone-500 hover:text-cream transition-colors duration-200"
                 >
                   {label}
                 </Link>
@@ -58,15 +58,15 @@ export function Footer() {
 
           {/* GitHub CTA */}
           <div>
-            <p className="text-xs font-mono text-zinc-600 tracking-wider mb-3">OPEN SOURCE</p>
-            <p className="text-xs text-zinc-500 mb-4 leading-relaxed">
+            <p className="text-xs font-mono text-stone-600 tracking-wider mb-3">OPEN SOURCE</p>
+            <p className="text-xs text-stone-500 mb-4 leading-relaxed">
               Claude Monitor is free and open source. Star it if it helps you.
             </p>
             <a
               href={GITHUB_STARS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/30 text-zinc-300 hover:text-white px-4 py-2 rounded transition-all duration-200"
+              className="inline-flex items-center gap-2 text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/30 text-stone-300 hover:text-cream px-4 py-2 rounded transition-all duration-200"
             >
               <Star className="w-3.5 h-3.5 text-yellow-400" />
               STAR ON GITHUB
@@ -75,14 +75,14 @@ export function Footer() {
         </motion.div>
 
         <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-zinc-600 font-mono">
+          <p className="text-xs text-stone-600 font-mono">
             © {new Date().getFullYear()} Claude Monitor. MIT License.
           </p>
           <a
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+            className="flex items-center gap-2 text-xs text-stone-600 hover:text-stone-400 transition-colors"
             aria-label="GitHub repository"
           >
             <Github className="w-3.5 h-3.5" />

@@ -13,30 +13,30 @@ const STATUS_CONFIG = {
   success: {
     label: 'SUCCESS',
     icon: CheckCircle2,
-    color: '#22c55e',
-    bg: 'rgba(34,197,94,0.08)',
-    border: 'rgba(34,197,94,0.18)',
+    color: '#9bc285',
+    bg: 'rgba(127,167,103,0.10)',
+    border: 'rgba(127,167,103,0.22)',
   },
   error: {
     label: 'ERROR',
     icon: XCircle,
-    color: '#ef4444',
-    bg: 'rgba(239,68,68,0.08)',
-    border: 'rgba(239,68,68,0.18)',
+    color: '#e08373',
+    bg: 'rgba(212,93,74,0.10)',
+    border: 'rgba(212,93,74,0.22)',
   },
   flagged: {
     label: 'FLAGGED',
     icon: AlertTriangle,
-    color: '#f59e0b',
-    bg: 'rgba(245,158,11,0.08)',
-    border: 'rgba(245,158,11,0.18)',
+    color: '#e8b878',
+    bg: 'rgba(224,161,79,0.10)',
+    border: 'rgba(224,161,79,0.22)',
   },
   running: {
     label: 'RUNNING',
     icon: Loader2,
-    color: '#9945de',
-    bg: 'rgba(153,69,222,0.08)',
-    border: 'rgba(153,69,222,0.18)',
+    color: '#d97757',
+    bg: 'rgba(217,119,87,0.10)',
+    border: 'rgba(217,119,87,0.22)',
   },
 } as const;
 
@@ -71,8 +71,8 @@ export function EventCard({ event, isNew = false }: EventCardProps) {
       transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
       className="group relative flex items-start gap-3 rounded-lg border px-4 py-3 transition-all duration-200 hover:border-white/12"
       style={{
-        background: '#0a0a0a',
-        borderColor: isNew ? cfg.border : 'rgba(255,255,255,0.06)',
+        background: '#221e18',
+        borderColor: isNew ? cfg.border : 'rgba(245,240,232,0.07)',
       }}
     >
       {/* Left accent line for flagged/error */}
@@ -96,7 +96,7 @@ export function EventCard({ event, isNew = false }: EventCardProps) {
       {/* Content */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="font-mono font-bold text-xs tracking-wider text-white">
+          <span className="font-mono font-bold text-xs tracking-wider text-cream">
             {event.tool}
           </span>
           <span
@@ -106,22 +106,22 @@ export function EventCard({ event, isNew = false }: EventCardProps) {
             {cfg.label}
           </span>
           {event.duration !== undefined && (
-            <span className="text-[10px] font-code text-zinc-600">{event.duration}ms</span>
+            <span className="text-[10px] font-code text-stone-600">{event.duration}ms</span>
           )}
         </div>
 
         {event.filePath && (
-          <p className="mt-0.5 text-[11px] font-code text-zinc-500 truncate">{event.filePath}</p>
+          <p className="mt-0.5 text-[11px] font-code text-stone-500 truncate">{event.filePath}</p>
         )}
         {event.error && (
-          <p className="mt-0.5 text-[11px] font-code text-red-400/80 truncate">{event.error}</p>
+          <p className="mt-0.5 text-[11px] font-code text-[#e08373] truncate">{event.error}</p>
         )}
       </div>
 
       {/* Right meta */}
       <div className="shrink-0 text-right">
-        <p className="text-[10px] font-code text-zinc-600">{formatTimestamp(event.timestamp)}</p>
-        <p className="text-[10px] font-code text-zinc-700 mt-0.5">
+        <p className="text-[10px] font-code text-stone-600">{formatTimestamp(event.timestamp)}</p>
+        <p className="text-[10px] font-code text-stone-700 mt-0.5">
           {truncateSessionId(event.sessionId)}
         </p>
       </div>

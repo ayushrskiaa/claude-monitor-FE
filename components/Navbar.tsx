@@ -43,7 +43,7 @@ export function Navbar() {
             <div className="w-7 h-7 rounded border border-accent/40 flex items-center justify-center group-hover:border-accent transition-colors duration-200">
               <Activity className="w-3.5 h-3.5 text-accent" />
             </div>
-            <span className="font-mono font-bold text-sm tracking-wider text-white">
+            <span className="font-mono font-bold text-sm tracking-wider text-cream">
               CLAUDE<span className="text-accent">.</span>MONITOR
             </span>
           </Link>
@@ -52,19 +52,19 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             <Link
               href="#features"
-              className="text-xs font-mono tracking-wider text-zinc-400 hover:text-white transition-colors duration-200"
+              className="text-xs font-mono tracking-wider text-stone-400 hover:text-cream transition-colors duration-200"
             >
               FEATURES
             </Link>
             <Link
               href="#how-it-works"
-              className="text-xs font-mono tracking-wider text-zinc-400 hover:text-white transition-colors duration-200"
+              className="text-xs font-mono tracking-wider text-stone-400 hover:text-cream transition-colors duration-200"
             >
               HOW IT WORKS
             </Link>
             <Link
               href="/dashboard"
-              className="text-xs font-mono tracking-wider text-zinc-400 hover:text-white transition-colors duration-200"
+              className="text-xs font-mono tracking-wider text-stone-400 hover:text-cream transition-colors duration-200"
             >
               DASHBOARD
             </Link>
@@ -76,7 +76,7 @@ export function Navbar() {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-mono tracking-wider text-zinc-400 hover:text-white transition-colors duration-200"
+              className="flex items-center gap-2 text-xs font-mono tracking-wider text-stone-400 hover:text-cream transition-colors duration-200"
               aria-label="View on GitHub"
             >
               <Github className="w-4 h-4" />
@@ -90,7 +90,7 @@ export function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 rounded text-zinc-400 hover:text-white transition-colors"
+            className="md:hidden p-2 rounded text-stone-400 hover:text-cream transition-colors"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
@@ -108,7 +108,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 bg-bg/85 backdrop-blur-sm md:hidden"
               onClick={() => setMobileOpen(false)}
               aria-hidden="true"
             />
@@ -130,7 +130,7 @@ export function Navbar() {
                     key={href}
                     href={href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-xs font-mono tracking-wider text-zinc-400 hover:text-white py-3 px-4 rounded hover:bg-white/5 transition-colors"
+                    className="text-xs font-mono tracking-wider text-stone-400 hover:text-cream py-3 px-4 rounded hover:bg-white/5 transition-colors"
                   >
                     {label}
                   </Link>

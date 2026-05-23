@@ -47,14 +47,14 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
   };
 
   return (
-    <div className="min-h-screen bg-black dot-grid flex items-center justify-center px-4 py-20">
+    <div className="min-h-screen bg-bg dot-grid flex items-center justify-center px-4 py-20">
       {/* Ambient */}
       <div
         aria-hidden="true"
         className="pointer-events-none fixed inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(153,69,222,0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(217,119,87,0.08) 0%, transparent 70%)',
         }}
       />
 
@@ -78,13 +78,13 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
         <motion.div
           variants={staggerItem}
           className="rounded-xl border border-white/8 overflow-hidden"
-          style={{ background: '#0a0a0a' }}
+          style={{ background: '#221e18' }}
         >
           <div className="px-6 pt-6 pb-4 border-b border-white/5">
-            <h1 className="font-mono font-bold text-lg tracking-wide text-white">
+            <h1 className="font-mono font-bold text-lg tracking-wide text-cream">
               Connect to Server
             </h1>
-            <p className="text-xs text-zinc-500 mt-1 font-sans">
+            <p className="text-xs text-stone-500 mt-1 font-sans">
               Enter your Claude Monitor server details to start monitoring.
             </p>
           </div>
@@ -92,7 +92,7 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
           <form onSubmit={handleSubmit} className="p-6 space-y-5">
             {/* Server URL */}
             <div>
-              <label className="block text-xs font-mono text-zinc-500 tracking-wider mb-2">
+              <label className="block text-xs font-mono text-stone-500 tracking-wider mb-2">
                 SERVER URL
               </label>
               <input
@@ -108,7 +108,7 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
 
             {/* API Key */}
             <div>
-              <label className="block text-xs font-mono text-zinc-500 tracking-wider mb-2">
+              <label className="block text-xs font-mono text-stone-500 tracking-wider mb-2">
                 API KEY
               </label>
               <div className="relative">
@@ -124,7 +124,7 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
                 <button
                   type="button"
                   onClick={() => setShowKey(v => !v)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-zinc-400 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-600 hover:text-stone-400 transition-colors"
                   aria-label={showKey ? 'Hide API key' : 'Show API key'}
                 >
                   {showKey ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -138,7 +138,7 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
                 variants={fadeInUp}
                 initial="initial"
                 animate="animate"
-                className="text-xs text-red-400 font-mono"
+                className="text-xs text-[#e08373] font-mono"
                 role="alert"
               >
                 {error}
@@ -165,7 +165,7 @@ export function ConnectScreen({ onConnect }: ConnectScreenProps) {
             </button>
 
             {/* Doc link */}
-            <p className="text-center text-xs text-zinc-600">
+            <p className="text-center text-xs text-stone-600">
               Need help?{' '}
               <a
                 href={GITHUB_URL}

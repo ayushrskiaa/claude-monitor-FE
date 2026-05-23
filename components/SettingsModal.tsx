@@ -51,7 +51,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-bg/80 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
           />
@@ -67,7 +67,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
               aria-modal="true"
               aria-labelledby="settings-title"
               className="pointer-events-auto w-full max-w-md rounded-xl border border-white/8 overflow-hidden"
-              style={{ background: '#0c0c0c' }}
+              style={{ background: '#221e18' }}
             >
               {/* Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-white/5">
@@ -76,7 +76,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
                 </h2>
                 <button
                   onClick={onClose}
-                  className="text-zinc-600 hover:text-zinc-300 transition-colors"
+                  className="text-stone-600 hover:text-stone-300 transition-colors"
                   aria-label="Close settings"
                 >
                   <X className="w-4 h-4" />
@@ -86,7 +86,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
               {/* Form */}
               <form onSubmit={handleSave} className="p-5 space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-zinc-500 tracking-wider mb-2">
+                  <label className="block text-xs font-mono text-stone-500 tracking-wider mb-2">
                     SERVER URL
                   </label>
                   <input
@@ -99,7 +99,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-zinc-500 tracking-wider mb-2">
+                  <label className="block text-xs font-mono text-stone-500 tracking-wider mb-2">
                     API KEY
                   </label>
                   <div className="relative">
@@ -113,7 +113,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
                     <button
                       type="button"
                       onClick={() => setShowKey(v => !v)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-600 hover:text-zinc-400 transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-600 hover:text-stone-400 transition-colors"
                       aria-label={showKey ? 'Hide key' : 'Show key'}
                     >
                       {showKey ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
@@ -122,7 +122,7 @@ export function SettingsModal({ open, onClose, serverUrl, apiKey, onSave }: Sett
                 </div>
 
                 {error && (
-                  <p className="text-xs text-red-400 font-mono" role="alert">{error}</p>
+                  <p className="text-xs text-[#e08373] font-mono" role="alert">{error}</p>
                 )}
 
                 <div className="flex gap-3 pt-1">

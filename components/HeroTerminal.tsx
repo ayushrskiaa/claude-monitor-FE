@@ -26,10 +26,10 @@ const DEMO_POOL: Omit<DemoEvent, 'id' | 'time'>[] = [
 ];
 
 const statusColors = {
-  success: '#22c55e',
-  error: '#ef4444',
-  flagged: '#f59e0b',
-  running: '#9945de',
+  success: '#9bc285',
+  error: '#e08373',
+  flagged: '#e8b878',
+  running: '#d97757',
 };
 
 const statusLabels = {
@@ -83,7 +83,7 @@ export function HeroTerminal() {
         aria-hidden="true"
         className="absolute inset-0 -m-4 rounded-2xl opacity-30"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(153,69,222,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(217,119,87,0.18) 0%, transparent 70%)',
           filter: 'blur(20px)',
         }}
       />
@@ -91,21 +91,21 @@ export function HeroTerminal() {
       {/* Terminal window */}
       <div
         className="relative rounded-xl overflow-hidden border border-white/8"
-        style={{ background: '#060606' }}
+        style={{ background: '#1a1612' }}
       >
         {/* Title bar */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5" style={{ background: '#0c0c0c' }}>
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5" style={{ background: '#221e18' }}>
           <div className="flex gap-1.5" aria-hidden="true">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
           </div>
-          <span className="ml-2 text-xs font-mono text-zinc-500 flex-1 text-center">
+          <span className="ml-2 text-xs font-mono text-stone-500 flex-1 text-center">
             claude-monitor — live events
           </span>
           <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" aria-label="Live" />
-            <span className="text-xs font-mono text-green-500">LIVE</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#9bc285] animate-pulse" aria-label="Live" />
+            <span className="text-xs font-mono text-[#9bc285]">LIVE</span>
           </div>
         </div>
 
@@ -134,16 +134,16 @@ export function HeroTerminal() {
                 {/* Tool name */}
                 <span
                   className="shrink-0 font-mono font-bold"
-                  style={{ color: '#9945de', minWidth: 80 }}
+                  style={{ color: '#d97757', minWidth: 80 }}
                 >
                   {event.tool}
                 </span>
 
                 {/* Detail */}
-                <span className="text-zinc-400 truncate flex-1">{event.detail}</span>
+                <span className="text-stone-400 truncate flex-1">{event.detail}</span>
 
                 {/* Time */}
-                <span className="shrink-0 text-zinc-600 ml-auto pl-2">{event.time}</span>
+                <span className="shrink-0 text-stone-600 ml-auto pl-2">{event.time}</span>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -152,15 +152,15 @@ export function HeroTerminal() {
         {/* Status bar */}
         <div
           className="flex items-center justify-between px-4 py-2 border-t border-white/5"
-          style={{ background: '#0c0c0c' }}
+          style={{ background: '#221e18' }}
         >
-          <span className="font-mono text-xs text-zinc-600">
-            session: <span className="text-zinc-500">4a9f2b1e</span>
+          <span className="font-mono text-xs text-stone-600">
+            session: <span className="text-stone-500">4a9f2b1e</span>
           </span>
-          <span className="font-mono text-xs text-zinc-600">
+          <span className="font-mono text-xs text-stone-600">
             {events.length} events
           </span>
-          <span className="font-mono text-xs text-zinc-600 flex items-center gap-1">
+          <span className="font-mono text-xs text-stone-600 flex items-center gap-1">
             <span className="w-1 h-1 rounded-full bg-accent animate-pulse inline-block" />
             connected
           </span>

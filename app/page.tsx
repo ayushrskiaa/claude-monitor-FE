@@ -149,7 +149,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <main className="relative bg-black overflow-x-hidden">
+    <main className="relative bg-bg overflow-x-hidden">
       <CursorGradient />
       <Navbar />
 
@@ -160,7 +160,7 @@ export default function Home() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(153,69,222,0.08) 0%, transparent 60%)',
+              'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(217,119,87,0.10) 0%, transparent 60%)',
           }}
         />
 
@@ -180,7 +180,7 @@ export default function Home() {
 
               <motion.h1
                 variants={staggerItem}
-                className="font-mono font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-white"
+                className="font-mono font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-cream"
               >
                 See Every
                 <br />
@@ -191,7 +191,7 @@ export default function Home() {
 
               <motion.p
                 variants={staggerItem}
-                className="mt-5 text-base text-zinc-400 leading-relaxed max-w-md font-sans"
+                className="mt-5 text-base text-stone-400 leading-relaxed max-w-md font-sans"
               >
                 Claude Monitor gives you complete visibility into every file read, shell command,
                 and web search your Claude agents perform — streamed live to your dashboard.
@@ -215,7 +215,7 @@ export default function Home() {
 
               <motion.div
                 variants={staggerItem}
-                className="mt-8 flex items-center gap-4 text-xs font-mono text-zinc-600"
+                className="mt-8 flex items-center gap-4 text-xs font-mono text-stone-600"
               >
                 {['MIT License', 'Zero telemetry', 'Self-hosted'].map(tag => (
                   <span key={tag} className="flex items-center gap-1.5">
@@ -237,10 +237,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionReveal className="mb-12">
             <SectionLabel>// FEATURES</SectionLabel>
-            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-white">
+            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-cream">
               Everything you need
               <br />
-              <span className="text-zinc-500">to trust your agents.</span>
+              <span className="text-stone-500">to trust your agents.</span>
             </h2>
           </SectionReveal>
 
@@ -261,7 +261,7 @@ export default function Home() {
                 <motion.div
                   variants={hoverLift}
                   className="h-full rounded-xl border border-white/7 p-5 transition-colors duration-300 hover:border-accent/30 cursor-default"
-                  style={{ background: '#0a0a0a' }}
+                  style={{ background: '#221e18' }}
                 >
                   <motion.div variants={hoverGlow} className="rounded-xl">
                     <p className="text-xs font-mono text-accent tracking-widest mb-3">{label}</p>
@@ -270,8 +270,8 @@ export default function Home() {
                         <Icon className="w-4 h-4 text-accent" />
                       </div>
                       <div>
-                        <h3 className="font-mono font-bold text-sm text-white mb-1.5">{title}</h3>
-                        <p className="text-xs text-zinc-500 leading-relaxed font-sans">{description}</p>
+                        <h3 className="font-mono font-bold text-sm text-cream mb-1.5">{title}</h3>
+                        <p className="text-xs text-stone-500 leading-relaxed font-sans">{description}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -287,10 +287,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionReveal className="mb-12">
             <SectionLabel>// HOW IT WORKS</SectionLabel>
-            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-white">
+            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-cream">
               Up in three steps.
               <br />
-              <span className="text-zinc-500">No config hell.</span>
+              <span className="text-stone-500">No config hell.</span>
             </h2>
           </SectionReveal>
 
@@ -299,19 +299,19 @@ export default function Home() {
               <SectionReveal key={step}>
                 <div
                   className="relative h-full p-6 lg:p-8"
-                  style={{ background: '#060606' }}
+                  style={{ background: '#1a1612' }}
                 >
                   {idx < HOW_IT_WORKS.length - 1 && (
                     <ChevronRight
-                      className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-zinc-700 z-10"
+                      className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-stone-700 z-10"
                       aria-hidden="true"
                     />
                   )}
-                  <span className="font-mono font-bold text-5xl text-white/5 block mb-4 leading-none select-none">
+                  <span className="font-mono font-bold text-5xl text-cream/5 block mb-4 leading-none select-none">
                     {step}
                   </span>
-                  <h3 className="font-mono font-bold text-base text-white mb-2">{title}</h3>
-                  <p className="text-xs text-zinc-500 leading-relaxed mb-4 font-sans">{description}</p>
+                  <h3 className="font-mono font-bold text-base text-cream mb-2">{title}</h3>
+                  <p className="text-xs text-stone-500 leading-relaxed mb-4 font-sans">{description}</p>
                   <code className="text-[11px] font-code text-accent/80 bg-accent/8 px-2 py-1 rounded">
                     {code}
                   </code>
@@ -327,10 +327,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionReveal className="mb-12">
             <SectionLabel>// USE CASES</SectionLabel>
-            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-white">
+            <h2 className="font-mono font-bold text-3xl sm:text-4xl text-cream">
               Built for teams that
               <br />
-              <span className="text-zinc-500">ship with confidence.</span>
+              <span className="text-stone-500">ship with confidence.</span>
             </h2>
           </SectionReveal>
 
@@ -341,7 +341,7 @@ export default function Home() {
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                   className="rounded-xl border border-white/7 p-6 hover:border-accent/25 transition-colors duration-300 cursor-default"
-                  style={{ background: '#0a0a0a' }}
+                  style={{ background: '#221e18' }}
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded border border-white/8 flex items-center justify-center">
@@ -349,8 +349,8 @@ export default function Home() {
                     </div>
                     <span className="badge badge-running text-[9px]">{tag}</span>
                   </div>
-                  <h3 className="font-mono font-bold text-sm text-white mb-2">{title}</h3>
-                  <p className="text-xs text-zinc-500 leading-relaxed font-sans">{description}</p>
+                  <h3 className="font-mono font-bold text-sm text-cream mb-2">{title}</h3>
+                  <p className="text-xs text-stone-500 leading-relaxed font-sans">{description}</p>
                 </motion.div>
               </SectionReveal>
             ))}
@@ -364,26 +364,26 @@ export default function Home() {
           <SectionReveal>
             <div
               className="relative rounded-2xl border border-white/8 overflow-hidden p-12 lg:p-16 text-center"
-              style={{ background: '#0a0a0a' }}
+              style={{ background: '#221e18' }}
             >
               <div
                 aria-hidden="true"
                 className="absolute inset-0 pointer-events-none"
                 style={{
                   background:
-                    'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(153,69,222,0.1) 0%, transparent 60%)',
+                    'radial-gradient(ellipse 70% 60% at 50% 100%, rgba(217,119,87,0.12) 0%, transparent 60%)',
                 }}
               />
               <div className="relative z-10">
                 <p className="text-xs font-mono text-accent tracking-widest mb-4">
                   // GET STARTED TODAY
                 </p>
-                <h2 className="font-mono font-bold text-3xl sm:text-5xl text-white mb-4 leading-tight">
+                <h2 className="font-mono font-bold text-3xl sm:text-5xl text-cream mb-4 leading-tight">
                   Trust your agents.
                   <br />
                   Verify their actions.
                 </h2>
-                <p className="text-sm text-zinc-500 mb-8 max-w-md mx-auto font-sans leading-relaxed">
+                <p className="text-sm text-stone-500 mb-8 max-w-md mx-auto font-sans leading-relaxed">
                   Free, open-source, and self-hosted. Add it to your Claude Code workflow in minutes.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
@@ -403,7 +403,7 @@ export default function Home() {
                 </div>
 
                 {/* Social proof placeholder */}
-                <div className="mt-10 flex items-center justify-center gap-2 text-xs font-mono text-zinc-700">
+                <div className="mt-10 flex items-center justify-center gap-2 text-xs font-mono text-stone-700">
                   <Terminal className="w-3.5 h-3.5" />
                   <span>Claude Code hook integration · WebSocket streaming · MIT License</span>
                 </div>

@@ -28,12 +28,12 @@ function StatusDot({ status }: { status: string }) {
   const isError = status === 'error';
 
   const color = isConnected
-    ? '#22c55e'
+    ? '#9bc285'
     : isConnecting
-    ? '#f59e0b'
+    ? '#e8b878'
     : isError
-    ? '#ef4444'
-    : '#4b5563';
+    ? '#e08373'
+    : '#6b5f52';
 
   const label = isConnected
     ? 'CONNECTED'
@@ -83,15 +83,15 @@ function EmptyState({ status }: { status: string }) {
       className="flex flex-col items-center justify-center py-24 text-center"
     >
       <div className="w-16 h-16 rounded-2xl border border-white/7 flex items-center justify-center mb-4">
-        <Inbox className="w-7 h-7 text-zinc-700" />
+        <Inbox className="w-7 h-7 text-stone-700" />
       </div>
-      <p className="font-mono font-bold text-sm text-zinc-500 mb-1">No events yet</p>
+      <p className="font-mono font-bold text-sm text-stone-500 mb-1">No events yet</p>
       {status === 'connected' ? (
-        <p className="text-xs text-zinc-700 max-w-xs font-sans">
+        <p className="text-xs text-stone-700 max-w-xs font-sans">
           Events will appear here as your Claude agent runs. Make sure the hook is active.
         </p>
       ) : (
-        <p className="text-xs text-zinc-700 max-w-xs font-sans">
+        <p className="text-xs text-stone-700 max-w-xs font-sans">
           Waiting for connection… Check your server URL and API key.
         </p>
       )}
@@ -112,7 +112,7 @@ function DashboardNav({ status, onSettingsOpen, onExport, onDisconnect }: Dashbo
   return (
     <header
       className="sticky top-0 z-40 border-b border-white/5 glass"
-      style={{ background: 'rgba(0,0,0,0.85)' }}
+      style={{ background: 'rgba(26,22,18,0.85)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center gap-4">
         {/* Logo */}
@@ -136,7 +136,7 @@ function DashboardNav({ status, onSettingsOpen, onExport, onDisconnect }: Dashbo
         <div className="flex items-center gap-1">
           <button
             onClick={onExport}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-zinc-500 hover:text-white hover:bg-white/5 rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-stone-500 hover:text-cream hover:bg-white/5 rounded transition-colors"
             aria-label="Export events as JSON"
             title="Export events"
           >
@@ -148,7 +148,7 @@ function DashboardNav({ status, onSettingsOpen, onExport, onDisconnect }: Dashbo
             href={GITHUB_STARS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-zinc-500 hover:text-white hover:bg-white/5 rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-stone-500 hover:text-cream hover:bg-white/5 rounded transition-colors"
             aria-label="Star on GitHub"
             title="Star on GitHub"
           >
@@ -160,7 +160,7 @@ function DashboardNav({ status, onSettingsOpen, onExport, onDisconnect }: Dashbo
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-zinc-500 hover:text-white hover:bg-white/5 rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-stone-500 hover:text-cream hover:bg-white/5 rounded transition-colors"
             aria-label="View on GitHub"
           >
             <Github className="w-3.5 h-3.5" />
@@ -169,7 +169,7 @@ function DashboardNav({ status, onSettingsOpen, onExport, onDisconnect }: Dashbo
 
           <button
             onClick={onSettingsOpen}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-zinc-500 hover:text-white hover:bg-white/5 rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-stone-500 hover:text-cream hover:bg-white/5 rounded transition-colors"
             aria-label="Open settings"
             title="Settings"
           >
@@ -179,7 +179,7 @@ function DashboardNav({ status, onSettingsOpen, onExport, onDisconnect }: Dashbo
 
           <button
             onClick={onDisconnect}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-zinc-500 hover:text-red-400 hover:bg-red-500/8 rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-mono text-stone-500 hover:text-[#e08373] hover:bg-[#d45d4a]/10 rounded transition-colors"
             aria-label="Disconnect and logout"
             title="Disconnect"
           >
@@ -294,7 +294,7 @@ export default function Dashboard() {
   // ─── Dashboard ────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-black" aria-label="Claude Monitor Dashboard">
+    <div className="min-h-screen bg-bg" aria-label="Claude Monitor Dashboard">
       <DashboardNav
         status={status}
         onSettingsOpen={() => setSettingsOpen(true)}
@@ -313,7 +313,7 @@ export default function Dashboard() {
               exit={{ opacity: 0, height: 0 }}
               className="mb-4"
             >
-              <div className="flex items-center gap-3 rounded-lg border border-yellow-500/20 bg-yellow-500/6 px-4 py-3 text-xs font-mono text-yellow-400">
+              <div className="flex items-center gap-3 rounded-lg border border-[#e0a14f]/25 bg-[#e0a14f]/8 px-4 py-3 text-xs font-mono text-[#e8b878]">
                 {status === 'error' ? (
                   <WifiOff className="w-3.5 h-3.5 shrink-0" />
                 ) : (
@@ -327,7 +327,7 @@ export default function Dashboard() {
                 {status === 'error' && (
                   <button
                     onClick={connect}
-                    className="ml-auto px-3 py-1 rounded border border-yellow-500/30 hover:bg-yellow-500/10 transition-colors"
+                    className="ml-auto px-3 py-1 rounded border border-[#e0a14f]/30 hover:bg-[#e0a14f]/12 transition-colors"
                   >
                     RETRY
                   </button>
@@ -381,14 +381,14 @@ export default function Dashboard() {
         {/* Event feed */}
         <div
           className="rounded-xl border border-white/7 overflow-hidden"
-          style={{ background: '#060606' }}
+          style={{ background: '#1f1b16' }}
         >
           {/* Feed header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
             <div className="flex items-center gap-2">
-              <p className="text-xs font-mono text-zinc-500 tracking-wider">EVENT FEED</p>
+              <p className="text-xs font-mono text-stone-500 tracking-wider">EVENT FEED</p>
               {events.length > 0 && (
-                <span className="text-[10px] font-mono text-zinc-700">
+                <span className="text-[10px] font-mono text-stone-700">
                   ({events.length.toLocaleString()})
                 </span>
               )}
@@ -397,7 +397,7 @@ export default function Dashboard() {
               {events.length > 0 && (
                 <button
                   onClick={clearEvents}
-                  className="text-[10px] font-mono text-zinc-700 hover:text-zinc-400 transition-colors px-2 py-1 rounded hover:bg-white/5"
+                  className="text-[10px] font-mono text-stone-700 hover:text-stone-400 transition-colors px-2 py-1 rounded hover:bg-white/5"
                 >
                   CLEAR
                 </button>
@@ -405,10 +405,10 @@ export default function Dashboard() {
               <div className="flex items-center gap-1.5">
                 <span
                   className={`w-1.5 h-1.5 rounded-full ${
-                    status === 'connected' ? 'bg-green-500 animate-pulse' : 'bg-zinc-700'
+                    status === 'connected' ? 'bg-[#9bc285] animate-pulse' : 'bg-stone-700'
                   }`}
                 />
-                <span className="text-[10px] font-mono text-zinc-600">
+                <span className="text-[10px] font-mono text-stone-600">
                   {status === 'connected' ? 'LIVE' : 'OFFLINE'}
                 </span>
               </div>
