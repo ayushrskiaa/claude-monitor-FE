@@ -336,15 +336,15 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {USE_CASES.map(({ icon: Icon, title, description, tag }) => (
-              <SectionReveal key={title}>
+              <SectionReveal key={title} className="h-full">
                 <motion.div
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                  className="rounded-xl border border-white/7 p-6 hover:border-accent/25 transition-colors duration-300 cursor-default"
+                  className="h-full flex flex-col rounded-xl border border-white/7 p-6 hover:border-accent/25 transition-colors duration-300 cursor-default"
                   style={{ background: '#221e18' }}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded border border-white/8 flex items-center justify-center">
+                  <div className="flex items-center gap-3 mb-4 h-9">
+                    <div className="w-9 h-9 rounded border border-white/8 flex items-center justify-center shrink-0">
                       <Icon className="w-4 h-4 text-accent" />
                     </div>
                     <span className="badge badge-running text-[9px]">{tag}</span>
