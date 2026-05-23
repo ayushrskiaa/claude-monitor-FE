@@ -257,23 +257,33 @@ export default function Home() {
                 variants={staggerItem}
                 whileHover="hover"
                 initial="rest"
+                className="h-full"
               >
                 <motion.div
                   variants={hoverLift}
-                  className="h-full rounded-xl border border-white/7 p-5 transition-colors duration-300 hover:border-accent/30 cursor-default"
+                  className="h-full flex flex-col rounded-xl border border-white/7 p-6 transition-colors duration-300 hover:border-accent/30 cursor-default"
                   style={{ background: '#221e18' }}
                 >
-                  <motion.div variants={hoverGlow} className="rounded-xl">
-                    <p className="text-xs font-mono text-accent tracking-widest mb-3">{label}</p>
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded border border-white/8 flex items-center justify-center shrink-0 mt-0.5">
-                        <Icon className="w-4 h-4 text-accent" />
+                  <motion.div variants={hoverGlow} className="flex flex-col h-full rounded-xl">
+                    {/* Label */}
+                    <p className="text-[10px] font-mono text-accent tracking-[0.18em] mb-5">
+                      {label}
+                    </p>
+
+                    {/* Icon + Title row */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-9 h-9 rounded-md border border-white/10 bg-white/[0.02] flex items-center justify-center shrink-0">
+                        <Icon className="w-4 h-4 text-accent" aria-hidden="true" />
                       </div>
-                      <div>
-                        <h3 className="font-mono font-bold text-sm text-cream mb-1.5">{title}</h3>
-                        <p className="text-xs text-stone-500 leading-relaxed font-sans">{description}</p>
-                      </div>
+                      <h3 className="font-mono font-bold text-[15px] leading-tight text-cream">
+                        {title}
+                      </h3>
                     </div>
+
+                    {/* Description — full width, pinned to top of remaining space */}
+                    <p className="text-[12px] text-stone-500 leading-relaxed font-sans">
+                      {description}
+                    </p>
                   </motion.div>
                 </motion.div>
               </motion.div>
